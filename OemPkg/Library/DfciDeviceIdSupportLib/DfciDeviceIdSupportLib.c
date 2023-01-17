@@ -100,7 +100,7 @@ DfciIdSupportV1GetSerialNumber (
   EFI_SMBIOS_HANDLE        SmbiosHandle;
   EFI_SMBIOS_TABLE_HEADER  *Record;
   SMBIOS_TYPE              Type;
-  SMBIOS_TABLE_TYPE1       *Type1Record;
+  SMBIOS_TABLE_TYPE1       *Type1Record = 0;
 
   SmbiosHandle = SMBIOS_HANDLE_PI_RESERVED;      // Reset handle
   Type         = SMBIOS_TYPE_SYSTEM_INFORMATION; // Smbios type1
@@ -139,7 +139,7 @@ DfciIdSupportGetManufacturer (
   EFI_SMBIOS_HANDLE        SmbiosHandle;
   EFI_SMBIOS_TABLE_HEADER  *Record;
   SMBIOS_TYPE              Type;
-  SMBIOS_TABLE_TYPE1       *Type1Record;
+  SMBIOS_TABLE_TYPE1       *Type1Record = 0;
 
   if (Manufacturer == NULL) {
     return EFI_INVALID_PARAMETER;
@@ -177,7 +177,7 @@ DfciIdSupportGetProductName (
   EFI_SMBIOS_HANDLE        SmbiosHandle;
   EFI_SMBIOS_TABLE_HEADER  *Record;
   SMBIOS_TYPE              Type;
-  SMBIOS_TABLE_TYPE1       *Type1Record;
+  SMBIOS_TABLE_TYPE1       *Type1Record = 0;
 
   if (ProductName == NULL) {
     return EFI_INVALID_PARAMETER;
@@ -215,7 +215,7 @@ DfciIdSupportGetSerialNumber (
   EFI_SMBIOS_HANDLE        SmbiosHandle;
   EFI_SMBIOS_TABLE_HEADER  *Record;
   SMBIOS_TYPE              Type;
-  SMBIOS_TABLE_TYPE3       *Type3Record;
+  SMBIOS_TABLE_TYPE3       *Type3Record = 0;
 
   if (SerialNumber == NULL) {
     return EFI_INVALID_PARAMETER;
